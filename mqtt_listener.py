@@ -12,6 +12,7 @@ MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "your_default_topic")
 MQTT_USERNAME = os.environ.get("MQTT_USERNAME")
 MQTT_PASSWORD = os.environ.get("MQTT_PASSWORD")
 
+print(MQTT_BROKER)
 
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
