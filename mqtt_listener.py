@@ -7,8 +7,8 @@ import os
 # --- MQTT Configuration ---
 
 MQTT_PORT = 1883  # Default MQTT port
-MQTT_BROKER = os.environ.get("MQTT_BROKER", "your_default_broker")
-MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "your_default_topic")
+MQTT_BROKER = os.environ.get("MQTT_BROKER")
+MQTT_TOPIC = os.environ.get("MQTT_TOPIC")
 MQTT_USERNAME = os.environ.get("MQTT_USERNAME")
 MQTT_PASSWORD = os.environ.get("MQTT_PASSWORD")
 
