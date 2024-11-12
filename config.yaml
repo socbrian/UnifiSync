@@ -12,12 +12,12 @@ arch:
 startup: once
 boot: auto
 options:
-  mqtt_broker: your_mqtt_broker_address
-  mqtt_topic: your_mqtt_topic
-  mqtt_username: mqtt_user
-  mqtt_password: your_mqtt_password
+  MQTT_BROKER: your_mqtt_broker_address
+  MQTT_TOPIC: your_mqtt_topic
+  MQTT_USERNAME: mqtt_user
+  MQTT_PASSWORD: your_mqtt_password
 schema:
-  mqtt_broker: str
-  mqtt_topic: str
-  mqtt_username: str
-  mqtt_password: str
+  MQTT_BROKER: str
+  MQTT_TOPIC: str
+  MQTT_USERNAME: str
+  MQTT_PASSWORD: str
