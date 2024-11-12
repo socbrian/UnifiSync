@@ -1,6 +1,0 @@
-{
-    "mqtt_broker": "your_default_broker",
-    "mqtt_topic": "your_default_topic",
-    "mqtt_username": "mqtt_user", 
-    "mqtt_password": "your_default_password" 
-  }
