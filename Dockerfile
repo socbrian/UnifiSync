@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9-buster
 
 # Install S6 overlay
 ARG S6_OVERLAY_VERSION=v2.1.0.2
