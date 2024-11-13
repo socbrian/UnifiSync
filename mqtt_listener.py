@@ -1,26 +1,19 @@
-import os
-import logging
 import paho.mqtt.client as mqtt
 import requests
 import json
 import warnings
-import yaml
-
-# Load configuration from config.yaml
-with open("config.yaml", "r") as config_file:
-    config = yaml.safe_load(config_file)
+import os
 
 # --- MQTT Configuration ---
-MQTT_PORT = 1883  # Default MQTT port
-MQTT_BROKER = config.get("options", {}).get("MQTT_BROKER")
-MQTT_TOPIC = config.get("options", {}).get("MQTT_TOPIC")
-MQTT_USERNAME = config.get("options", {}).get("MQTT_USERNAME")
-MQTT_PASSWORD = config.get("options", {}).get("MQTT_PASSWORD")
 
-logging.debug(f"MQTT_BROKER: {MQTT_BROKER}")
-logging.debug(f"MQTT_TOPIC: {MQTT_TOPIC}")
-logging.debug(f"MQTT_USERNAME: {MQTT_USERNAME}")
-logging.debug(f"MQTT_PASSWORD: {MQTT_PASSWORD}")
+MQTT_PORT = 1883  # Default MQTT port
+MQTT_BROKER = os.environ.get("MQTT_BROKER", "your_default_broker")
+MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "your_default_topic")
+MQTT_USERNAME = os.environ.get("MQTT_USERNAME")
+MQTT_PASSWORD = os.environ.get("MQTT_PASSWORD")
+
+print(MQTT_BROKER)
+
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
 

@@ -1,5 +1,5 @@
 name: MQTT Traffic Route Controller
-version: 1.0.2
+version: 1.0.3
 slug: mqtt-traffic-route-controller
 description: Controls traffic routes based on MQTT messages.
 init: false
@@ -12,10 +12,10 @@ arch:
 startup: once
 boot: auto
 options:
-  MQTT_BROKER: your_mqtt_broker_address
-  MQTT_TOPIC: your_mqtt_topic
-  MQTT_USERNAME: mqtt_user
-  MQTT_PASSWORD: your_mqtt_password
+  MQTT_BROKER: 
+  MQTT_TOPIC: 
+  MQTT_USERNAME: 
+  MQTT_PASSWORD: 
 schema:
   MQTT_BROKER: str
   MQTT_TOPIC: str
