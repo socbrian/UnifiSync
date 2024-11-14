@@ -3,16 +3,22 @@ import requests
 import json
 import warnings
 import os
+import yaml
 
 # --- MQTT Configuration ---
 
 MQTT_PORT = 1883  # Default MQTT port
-MQTT_BROKER = os.environ.get("MQTT_BROKER", "your_default_broker")
-MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "your_default_topic")
-MQTT_USERNAME = os.environ.get("MQTT_USERNAME")
-MQTT_PASSWORD = os.environ.get("MQTT_PASSWORD")
 
-print(MQTT_BROKER)
+# Load configuration from config.yaml
+with open("config.yaml", "r") as config_file:
+    config = yaml.safe_load(config_file)
+
+MQTT_BROKER = config.get("MQTT_BROKER", "your_default_broker")
+MQTT_TOPIC = config.get("MQTT_TOPIC", "your_default_topic")
+MQTT_USERNAME = config.get("MQTT_USERNAME")
+MQTT_PASSWORD = config.get("MQTT_PASSWORD")
+
+print("this is the IP" & MQTT_BROKER)
 
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
