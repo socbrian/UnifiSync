@@ -18,7 +18,7 @@ MQTT_TOPIC = config.get("MQTT_TOPIC", "your_default_topic")
 MQTT_USERNAME = config.get("MQTT_USERNAME")
 MQTT_PASSWORD = config.get("MQTT_PASSWORD")
 
-print("this is the IP" & MQTT_BROKER)
+print("this is the IP " + MQTT_BROKER)
 
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
