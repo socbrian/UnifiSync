@@ -13,13 +13,15 @@ MQTT_PORT = 1883  # Default MQTT port
 with open("config.yaml", "r") as config_file:
     config = yaml.safe_load(config_file)
 
-MQTT_BROKER = config.get("MQTT_BROKER", "your_default_broker")
-MQTT_TOPIC = config.get("MQTT_TOPIC", "your_default_topic")
+MQTT_BROKER = config.get("MQTT_BROKER", "192.168.1.132")
+MQTT_TOPIC = config.get("MQTT_TOPIC", "UNIFI")
 MQTT_USERNAME = config.get("MQTT_USERNAME")
 MQTT_PASSWORD = config.get("MQTT_PASSWORD")
 
 print("this is the IP " + MQTT_BROKER)
-
+print("this is the Topic " + MQTT_TOPIC)
+print("this is the USer " + MQTT_USERNAME)
+print("this is the Pass " + MQTT_PASSWORD)
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
 
