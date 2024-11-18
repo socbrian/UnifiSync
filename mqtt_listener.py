@@ -12,12 +12,15 @@ import yaml
 
 MQTT_PORT = 1883  # Default MQTT port
 
+
+
+
 # Load configuration from config.yaml
 with open("config.yaml", "r") as config_file:
     config = yaml.safe_load(config_file)
 
-MQTT_BROKER = config.get("MQTT_BROKER", "192.168.1.132")
-MQTT_TOPIC = config.get("MQTT_TOPIC", "UNIFI")
+MQTT_BROKER = config.get("MQTT_BROKER")
+MQTT_TOPIC = config.get("MQTT_TOPIC")
 MQTT_USERNAME = config.get("MQTT_USERNAME")
 MQTT_PASSWORD = config.get("MQTT_PASSWORD")
 
