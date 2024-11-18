@@ -2,13 +2,12 @@ FROM python:3.9-buster
 
 WORKDIR /app
 
-
-COPY run.sh /
+COPY run.sh /run.sh
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
 
 COPY . .
 
-CMD [ "/run.sh" ]
+CMD ["/run.sh"]

@@ -1,5 +1,5 @@
 name: MQTT Traffic Route Controller
-version: 1.0.4.1
+version: 1.0.4.2
 slug: mqtt-traffic-route-controller
 description: Controls traffic routes based on MQTT messages.
 init: false
