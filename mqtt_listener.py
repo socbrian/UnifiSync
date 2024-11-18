@@ -4,17 +4,8 @@ import paho.mqtt.client as mqtt
 import requests
 import json
 import warnings
-import os
 
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
-
-# Now, to clear the screen
-cls()
 # --- MQTT Configuration ---
-
-print("hello")
-
 MQTT_PORT = 1883  # Default MQTT port
 
 # Load configuration from config.yaml
@@ -28,10 +19,10 @@ MQTT_PASSWORD = config.get("MQTT_PASSWORD")
 UNIFI_USERNAME = config.get("UNIFI_USERNAME")
 UNIFI_PASSWORD = config.get("UNIFI_PASSWORD")
 
-print("this is the IP " + MQTT_BROKER)
-print("this is the Topic " + MQTT_TOPIC)
-print("this is the USer " + MQTT_USERNAME)
-print("this is the Pass " + MQTT_PASSWORD)
+#print("this is the IP " + MQTT_BROKER)
+#print("this is the Topic " + MQTT_TOPIC)
+#print("this is the USer " + MQTT_USERNAME)
+#print("this is the Pass " + MQTT_PASSWORD)
 
 warnings.filterwarnings("ignore", category=requests.packages.urllib3.exceptions.InsecureRequestWarning) 
 
@@ -66,15 +57,10 @@ def update_traffic_route(message):
 
     responseJSON = response.json()
 
-    #print(response.headers)
 
     device_token = responseJSON['deviceToken']
     XCSRF_Token = response.headers['X-CSRF-Token']
 
-    #print(XCSRF_Token)
-    #print(XCSRF_Token)
-
-    #print(response.cookies)
 
     #  `response` holds your response object
     cookies = response.cookies
@@ -82,11 +68,6 @@ def update_traffic_route(message):
     # Get the TOKEN cookie value
     token_value = cookies.get("TOKEN")
 
-    #print(token_value)
-
-    # Note: json_data will not be serialized by requests
-    # exactly as it was in the original request.
-    #data = '{"username":"APITest","password":"hYrDeaRfARY4K6eBiLev","token":"","rememberMe":false}'
 
 
     url = "https://192.168.1.1/proxy/network/v2/api/site/default/trafficroutes/672d66d5c1ea4153e100edca"
@@ -95,7 +76,7 @@ def update_traffic_route(message):
      "_id": "672d66d5c1ea4153e100edca",
      "description": "TV to Parsippany",
      "domains": [],
-     "enabled": message,  # Use the 'enabled' value from MQTT
+     "enabled": message,  # Use the value from MQTT
      "ip_addresses": [],
      "ip_ranges": [],
      "kill_switch_enabled": True,
