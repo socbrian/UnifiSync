@@ -5,19 +5,14 @@ import paho.mqtt.client as mqtt
 import requests
 import json
 import warnings
-import os
-import yaml
 
 # --- MQTT Configuration ---
 
 MQTT_PORT = 1883  # Default MQTT port
 
-
-
-
 # Load configuration from config.yaml
-with open("config.yaml", "r") as config_file:
-    config = yaml.safe_load(config_file)
+with open("/data/options.json", "r") as config_file:
+    config = json.load(config_file)
 
 MQTT_BROKER = config.get("MQTT_BROKER")
 MQTT_TOPIC = config.get("MQTT_TOPIC")
