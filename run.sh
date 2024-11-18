@@ -1,3 +1,3 @@
-#!/usr/bin/with-contenv bashio
+#!/bin/bash
 
-python3 mqtt_listener.py
+python mqtt_listener.py
