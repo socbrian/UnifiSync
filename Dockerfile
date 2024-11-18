@@ -10,4 +10,4 @@ RUN chmod +x /run.sh
 
 COPY . .
 
-CMD ["/run.sh"]
+CMD ["python", "mqtt_listener.py"]

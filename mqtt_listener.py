@@ -25,6 +25,8 @@ MQTT_BROKER = config.get("MQTT_BROKER")
 MQTT_TOPIC = config.get("MQTT_TOPIC")
 MQTT_USERNAME = config.get("MQTT_USERNAME")
 MQTT_PASSWORD = config.get("MQTT_PASSWORD")
+UNIFI_USERNAME = config.get("UNIFI_USERNAME")
+UNIFI_PASSWORD = config.get("UNIFI_PASSWORD")
 
 print("this is the IP " + MQTT_BROKER)
 print("this is the Topic " + MQTT_TOPIC)
@@ -54,8 +56,8 @@ def update_traffic_route(message):
     }
 
     json_data = {
-        'username': 'APITest',
-        'password': 'hYrDeaRfARY4K6eBiLev',
+        'username': UNIFI_USERNAME,
+        'password': UNIFI_PASSWORD,
         'token': '',
         'rememberMe': False,
     }
