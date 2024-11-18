@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 
-
 import paho.mqtt.client as mqtt
 import requests
 import json
 import warnings
+import os
 
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+# Now, to clear the screen
+cls()
 # --- MQTT Configuration ---
+
+print("hello")
 
 MQTT_PORT = 1883  # Default MQTT port
 
